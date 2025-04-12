@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>小坝子边境派出所举报与评价系统</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { 
+            background: #f8f9fa; 
+            font-family: '微软雅黑', sans-serif; 
+            font-size: 18px !important; 
+        }
+        .container { 
+            max-width: 1200px; 
+            margin-top: 60px; 
+            padding: 30px; 
+        }
+        .navbar { 
+            background: #0c5460; 
+            font-size: 1.5em; 
+        }
+        .card { 
+            margin: 30px 0; 
+            background: #fff; 
+            border: none; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
+        }
+        .card-header { 
+            background: #e9ecef; 
+            font-size: 1.4em; 
+        }
+        .btn-primary { 
+            background: #0c5460; 
+            border: none; 
+            padding: 20px 40px; 
+            font-size: 1.5em; 
+            width: 100%; 
+            transition: all 0.2s ease; 
+        }
+        .btn-primary:hover { 
+            background: #0a424d; 
+            transform: scale(1.05); 
+        }
+        #contentArea {
+            max-height: 350px;
+            overflow-y: auto;
+            padding: 20px;
+            line-height: 1.8;
+            font-size: 1.4em;
+        }
+        .hero-banner {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://via.placeholder.com/1200x400?text=边境安全') no-repeat center;
+            background-size: cover;
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+        }
+        .hero-banner h1 {
+            font-size: 3.5em;
+        }
+        .hero-banner p {
+            font-size: 1.8em;
+            margin-bottom: 3rem;
+        }
+        .quick-links img {
+            width: 100px;
+            height: 100px;
+        }
+        .quick-links a {
+            font-size: 1.5em;
+            display: block;
+            margin-top: 1rem;
+        }
+        /* 新增按钮布局样式 */
+        .card-body.d-flex {
+            gap: 2rem;
+        }
+        .card-body.d-flex > button {
+            flex: 1;
+            min-width: 45%;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand text-white" href="#">小坝子边境派出所</a>
+            <ul class="nav ms-auto">
+                <li><a href="#report" class="nav-link text-white" style="font-size:1.5em">举报犯罪</a></li>
+                <li><a href="#evaluation" class="nav-link text-white" style="font-size:1.5em">服务评价</a></li>
+                <li><a href="admin_login.html" class="nav-link text-white" style="font-size:1.5em">管理员登录</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="hero-banner">
+        <h1>共建平安边境</h1>
+        <p>您的每一个举报都是维护边境安全的重要力量</p>
+        <div class="quick-links">
+            <a href="report.html">举报</a>
+            <a href="evaluation.html">评价</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <div class="card-header">举报奖励通告</div>
+            <div class="card-body">
+                <div id="contentArea" class="border p-3 rounded"></div>
+            </div>
+        </div>
+
+        <div class="card mt-5">
+            <div class="card-header">快速入口</div>
+            <div class="card-body d-flex">
+                <button class="btn btn-primary px-4" onclick="location='report.html'">举报违法犯罪</button>
+                <button class="btn btn-primary px-4" onclick="location='evaluation.html'">服务人员评价</button>
+            </div>
+        </div>
+
+        <div class="card mt-5">
+            <div class="card-header">联系方式</div>
+            <div class="card-body">
+                <p style="font-size:1.5em">24小时报警电话：<strong style="font-size:2em">0876-7374110</strong></p>
+                <p style="font-size:1.5em">地址：文山州马关县小坝子边境派出所</p>
+                <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!2m3!3i4550000!2i3500000!3i30!2m3!6e0!7e0!8j1235467890!3b1!3m2!1i1024!2i768!4f13.1!3w1024!4a!4c!5m2!1e48!6e0!7i1320!8i640!9m2!1b1!2i-1" width="100%" height="400" style="border:0;"></iframe> -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 完整通告内容
+        const content = `为充分调动全社会力量参与维护文山边境地区安全稳定，鼓励群众积极举报跨境违法犯罪活动，提升群众参与打击跨境违法犯罪的积极性，切实维护人民群众合法权益，文山边境管理支队将自本通告发布之日起，对举报跨境违法犯罪并提供有效线索的行为实施奖励。请广大人民群众踊跃参与，共建和谐边境社会。具体通告如下：
+
+举报对象
+
+本通告中的跨境违法犯罪主要指非法出入境、走私、跨境电信网络诈骗、跨境赌博以及外籍人员非法居留、非法就业等违法犯罪行为。
+
+奖励对象
+
+本通告中的奖励对象是指以书面材料、电话、微信或者其他方式向边境管理部门举报跨境违法犯罪活动线索的人员。如有港澳台胞、华侨或外籍人士和其他组织举报的，参照本通告实施奖励。
+
+奖励标准
+(一）非法出入境
+1.根据群众举报，一案查获5名以下偷渡人员的，给予500元-2000元奖励；一案查获6至10名偷渡人员的，给予2000元-5000元奖励；一案查获11至20名偷渡人员的，给予5000元-10000元奖励；一案查获21名以上偷渡人员的，给予10000元-20000元奖励。
+2.根据群众举报，一案抓获5名以下运送者的，给予1000元-5000元奖励；一案抓获6至10名运送者的，给予5000元-10000元奖励；一案抓获10名以上运送者的，给予10000元-30000元奖励。
+...`;
+        
+        document.getElementById('contentArea').innerHTML = content;
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>违法犯罪举报 - 小坝子边境派出所</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background: #f8f9fa; padding: 2rem; }
+        .report-form { max-width: 800px; margin: 2rem auto; background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        .form-group { margin-bottom: 1.5rem; }
+    </style>
+</head>
+<body>
+    <div class="report-form">
+        <h2 class="text-center mb-4">违法犯罪举报表单</h2>
+        <form id="reportForm">
+            <div class="form-group">
+                <label for="reportType" class="form-label">举报类型</label>
+                <select class="form-select" id="reportType" required>
+                    <option value="非法出入境">非法出入境</option>
+                    <option value="走私">走私</option>
+                    <option value="跨境电信诈骗">跨境电信诈骗</option>
+                    <option value="跨境赌博">跨境赌博</option>
+                    <option value="外籍人员非法居留/就业">外籍人员非法居留/就业</option>
+                    <option value="其他">其他</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="location" class="form-label">发生地点</label>
+                <input type="text" class="form-control" id="location" placeholder="请输入具体地点" required>
+            </div>
+            <div class="form-group">
+                <label for="details" class="form-label">详细描述</label>
+                <textarea class="form-control" id="details" rows="5" placeholder="请详细描述事件经过..." required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="evidence" class="form-label">证据材料</label>
+                <input type="file" class="form-control" id="evidence" multiple>
+            </div>
+            <div class="form-group">
+                <label for="contact" class="form-label">联系方式</label>
+                <input type="text" class="form-control" id="contact" placeholder="请输入您的联系方式（选填）">
+            </div>
+            <button type="submit" class="btn btn-primary w-100">提交举报</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('reportForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const reportData = {
+                type: document.getElementById('reportType').value,
+                location: document.getElementById('location').value,
+                details: document.getElementById('details').value,
+                contact: document.getElementById('contact').value
+            };
+            let reports = JSON.parse(localStorage.getItem('reports')) || [];
+            reports.push(reportData);
+            localStorage.setItem('reports', JSON.stringify(reports));
+            alert('举报已成功提交！');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>管理员后台 - 小坝子边境派出所</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background: #f8f9fa; padding: 2rem; font-family: '微软雅黑', sans-serif; }
+        .admin-container { max-width: 1200px; margin: 2rem auto; background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        .tab-content { margin-top: 2rem; }
+        .report-preview { border: 1px solid #eee; padding: 1rem; margin: 1rem 0; }
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <h2 class="text-center mb-4">管理员控制台</h2>
+        <ul class="nav nav-tabs" id="adminTabs">
+            <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#reports">举报信息</a></li>
+            <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#evaluations">评价信息</a></li>
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane show active" id="reports">
+                <h4>最新举报信息（示例数据）</h4>
+                <div class="report-preview">
+                    <p><strong>类型：</strong>非法出入境</p>
+                    <p><strong>地点：</strong>马关县边境线</p>
+                    <p><strong>描述：</strong>发现5人非法越境</p>
+                </div>
+                <div class="report-preview">
+                    <p><strong>类型：</strong>跨境电信诈骗</p>
+                    <p><strong>地点：</strong>麻栗坡县</p>
+                    <p><strong>描述：</strong>可疑转账行为</p>
+                </div>
+            </div>
+
+            <div class="tab-pane" id="evaluations">
+                <h4>最新评价信息（示例数据）</h4>
+                <div class="evaluation-preview">
+                    <p><strong>警官：</strong>刘警官</p>
+                    <p>★★★★☆</p>
+                    <p>处理效率很高，态度专业</p>
+                </div>
+                <div class="evaluation-preview">
+                    <p><strong>警官：</strong>陈警官</p>
+                    <p>★★★☆☆</p>
+                    <p>沟通及时</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
